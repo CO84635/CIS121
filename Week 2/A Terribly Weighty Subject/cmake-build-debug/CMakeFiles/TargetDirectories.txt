@@ -1,0 +1,3 @@
+C:/Users/blake/Documents/CIS121/A Terribly Weighty Subject/cmake-build-debug/CMakeFiles/Harper.dir
+C:/Users/blake/Documents/CIS121/A Terribly Weighty Subject/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/blake/Documents/CIS121/A Terribly Weighty Subject/cmake-build-debug/CMakeFiles/rebuild_cache.dir

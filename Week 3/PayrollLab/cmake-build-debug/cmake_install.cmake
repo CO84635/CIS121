@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/blake/Documents/CIS121/PayrollLab
+# Install script for directory: C:/Users/blake/Documents/CIS121/Week 3/PayrollLab
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/blake/Documents/CIS121/PayrollLab/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/blake/Documents/CIS121/Week 3/PayrollLab/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

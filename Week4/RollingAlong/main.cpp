@@ -1,36 +1,66 @@
 #include <iostream>
 #include <iomanip>
 #include <ctime>
+#include <sstream>
+#include <string>
 
 using namespace std;
-int main() {
-    int Amount_Of_Sides;
-    int Amount_Of_Dice;
-    int Min_Ind_Die = 1;
-    int roll = 0;
-    int roll_total;
-    cout << "Welcome to the Dice Statistics program!\n\n";
 
-    cout << "How many dice are in your roll?\n";
-    cin >> Amount_Of_Dice;
-
-    cout << "How many sides are on the dice?\n";
-    cin >> Amount_Of_Sides;
-
-    int Max_Dice_Roll = Amount_Of_Dice * Amount_Of_Sides; // Calculating the Max Dice Roll
-
-for (int Amount_Of_Rolls_Left = 0; Amount_Of_Rolls_Left < Amount_Of_Dice; Amount_Of_Rolls_Left++) {
-    srand(time(0));
-    roll = rand() % (Amount_Of_Sides - Min_Ind_Die + 1) + Min_Ind_Die;
+int roll_dice(int amount_of_dice, int amount_of_sides) {
+    int min_ind_die = 1;
+    int roll_total = 0;
+    for (int amount_of_rolls_left = 0; amount_of_rolls_left < amount_of_dice; amount_of_rolls_left++) {
+        int roll = rand() % amount_of_sides + min_ind_die;
+        roll_total += roll;
+    }
+    return roll_total;
 }
+int main() {
+    int amount_of_sides,
+        amount_of_dice,
+        modifier; // Constant modifier added to roll.
+    string roll_input;
 
+    cout << "Welcome to the Dice Statistics program!\n\n";
+//    cout << "How many dice are in your roll?\n";
+//    cin >> amount_of_dice;
+//    cout << "How many sides are on a dice?\n";
+//    cin >> amount_of_sides;
+//    cout << "What is the constant modifier you want to add to your roll?\n";
+//    cin >> const_modifier;
+    cout << "What is your roll?\n";
+    cin >> roll_input;
 
-    cout << "When you roll a " << Amount_Of_Dice << "d" << Amount_Of_Sides << ", your statistics will be:\n\n";
+    string str = roll_input;
+    stringstream ss(str);
+    char d,
+        plus;
 
-    cout << setw(10) << "Minimum: " << Amount_Of_Dice << endl;
-    cout << setw(10) << "Average: " << (Amount_Of_Dice + Max_Dice_Roll) / 2 << endl;
-    cout << setw(10) << "Maximum: " <<  Max_Dice_Roll << endl;
-    cout << roll_total;
+    ss >> amount_of_dice >> d >> amount_of_sides >> plus >> modifier;
 
+    srand(time(0)); // Seeding time with random.
+
+    double max = amount_of_sides * amount_of_dice + modifier;
+    double min = amount_of_dice + modifier;
+    double average = (min + max) / 2;
+    int roll_total = roll_dice(amount_of_dice, amount_of_sides);
+    if (modifier == 0) {
+        cout << "\nWhen you roll a " << amount_of_dice << "d" << amount_of_sides << ", your statistics will be:\n";
+    } else {
+        cout << "\nWhen you roll a " << amount_of_dice << "d" << amount_of_sides << " + " << modifier
+        << ", your statistics will be:\n";
+    }
+    cout << setw(20) << "Minimum: " << min << endl;
+    cout << setw(20) << "Average: " << average << endl;
+    cout << setw(20) << "Maximum: " << max << endl;
+    if (amount_of_dice == 1 && roll_total == 20 && amount_of_sides == 20) {
+        cout << "You rolled a Natural 20! Critical Success!" << endl;
+    } else if (amount_of_dice && roll_total == 1 && amount_of_sides == 20) {
+        cout << " You rolled Natural 1... Critical failure :(" << endl;
+    } else {
+        cout << "\nRolled: " << roll_total + modifier << endl;
+    }
+
+    cout << "Thank you for using the Dice Statistics Program! ";
     return 0;
 }

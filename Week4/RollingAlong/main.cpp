@@ -3,6 +3,7 @@
 #include <ctime>
 #include <sstream>
 #include <string>
+#include <cctype>
 
 using namespace std;
 
@@ -15,30 +16,31 @@ int roll_dice(int amount_of_dice, int amount_of_sides) {
     }
     return roll_total;
 }
+
 int main() {
     int amount_of_sides,
         amount_of_dice,
-        modifier; // Constant modifier added to roll.
-    string roll_input;
+        modifier = 0;
+    string roll_input_string;
 
     cout << "Welcome to the Dice Statistics program!\n\n";
-//    cout << "How many dice are in your roll?\n";
-//    cin >> amount_of_dice;
-//    cout << "How many sides are on a dice?\n";
-//    cin >> amount_of_sides;
-//    cout << "What is the constant modifier you want to add to your roll?\n";
-//    cin >> const_modifier;
+
     cout << "What is your roll?\n";
-    cin >> roll_input;
+    getline(cin, roll_input_string);
 
-    string str = roll_input;
-    stringstream ss(str);
-    char d,
-        plus;
+    stringstream ss(roll_input_string);
+    char d, plus;
+    ss >> amount_of_dice >> d >> amount_of_sides;
 
-    ss >> amount_of_dice >> d >> amount_of_sides >> plus >> modifier;
+    while(isspace(ss.peek())) ss.get();
 
-    srand(time(0)); // Seeding time with random.
+    if (ss.peek() == '+') {
+        ss >> plus;
+        while (isspace(ss.peek())) ss.get();
+        ss >> modifier;
+        }
+
+    srand(time(0));
 
     double max = amount_of_sides * amount_of_dice + modifier;
     double min = amount_of_dice + modifier;

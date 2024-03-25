@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.27"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "A_Tiny_Word_Processor",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "A_Tiny_Word_Processor::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-A_Tiny_Word_Processor-Debug-5fbd147492ba8603ef92.json",
+					"name" : "A_Tiny_Word_Processor",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/blake/OneDrive/Documents/GitHub/CIS121/Week 6/A Tiny Word Processor/cmake-build-debug",
+		"source" : "C:/Users/blake/OneDrive/Documents/GitHub/CIS121/Week 6/A Tiny Word Processor"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

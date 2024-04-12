@@ -14,7 +14,7 @@ string arabic_to_roman(int num) {
         num -= 900;
     } else if (num >= 500) {
         roman += "D";
-        num -= 500;
+        num -= 500;I
     } else if (num >= 400) {
         roman += "CD";
         num -= 400;

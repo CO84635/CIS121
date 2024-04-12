@@ -12,8 +12,8 @@ bool is_palindrome(string word) {
 }
 
 int main() {
-                   assert(is_palindrome("Rotavator"));
-    assert(is_palindrome("x"));
+    assert(is_palindrome("Rotavator"));
+    assert(is_palindrome("34743"));
     assert(is_palindrome("mom"));
 
     assert(!is_palindrome("Sam"));

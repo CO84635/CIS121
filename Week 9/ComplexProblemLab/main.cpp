@@ -1,5 +1,6 @@
 #include <iostream>
 #include <iomanip>
+#include <cmath>
 
 using namespace std;
 
@@ -7,6 +8,7 @@ class ComplexNumber {
 private:
     float real;
     float imaginary;
+    
 public:
     ComplexNumber(float real, float imaginary) {
         this-> imaginary = imaginary;
@@ -25,9 +27,32 @@ public:
         return ComplexNumber(real * number_two.real - imaginary * number_two.imaginary,
                              real * number_two.imaginary + number_two.real * imaginary);
     }
+
     ComplexNumber division(const ComplexNumber number_two) const{
-        return ComplexNumber(real * number_two.real - imaginary * number_two.imaginary,
-                             real * number_two.imaginary + number_two.real * imaginary);
+        float dividend = number_two.real * number_two.real + number_two.imaginary * number_two.imaginary;
+        float real_result = (real * number_two.imaginary + number_two.real * imaginary) / dividend;
+        float imaginary_result = (real * number_two.real - imaginary * number_two.imaginary) /dividend;
+        return ComplexNumber(real_result, imaginary_result);
+    }
+
+    ComplexNumber negation() const{
+        return ComplexNumber(- real, - imaginary);
+    }
+
+    float magnitude() const{
+        return sqrt(((real * real) + (imaginary * imaginary)));
+    }
+
+    ComplexNumber conjugation() const{
+        return ComplexNumber(real, -imaginary);
+    }
+
+    float real_part() const{
+        return real;
+    }
+
+    float imaginary_part() const{
+        return imaginary;
     }
 
     string pretty_print() const {
@@ -41,14 +66,6 @@ public:
 };
 
 int main() {
-    ComplexNumber number_one = ComplexNumber(5.0, 7.0);
-    ComplexNumber number_two = ComplexNumber(2.5, 3.1);
-
-    ComplexNumber number_three = number_one.add(number_two);
-    cout << number_three.pretty_print(); // Returns 7.5 + 10.1i
-
-    ComplexNumber number_four = number_one.subtract(number_two);
-    cout << number_four.pretty_print(); // Returns 2.5 + 3.9i
 
     return 0;
 }

@@ -1,60 +1,16 @@
 #include <iostream>
 #include <cassert>
-
+#include "roman_and_arabic_converter.h"
 using namespace std;
 
-string arabic_to_roman(int num) {
-    string roman = "";
-    while (num >= 1000) {
-        roman += "M";
-        num -= 1000;
-    }
-    if (num >= 900) {
-        roman += "CM";
-        num -= 900;
-    } else if (num >= 500) {
-        roman += "D";
-        num -= 500;I
-    } else if (num >= 400) {
-        roman += "CD";
-        num -= 400;
-    }
-    while (num >= 100) {
-        roman += "X";
-        num -= 100;
-    }
-    if (num >= 90) {
-        roman += "XC";
-        num -= 90;
-    } else if (num >= 50) {
-        roman += "L";
-        num -= 50;
-    } else if (num >= 40) {
-        roman += "XL";
-        num -= 40;
-    }
-    while (num >= 10) {
-        roman += "X";
-        num -= 10;
-    }
-    if (num >= 9) {
-        roman += "IX";
-        num -= 9;
-    } else if (num >= 5) {
-        roman += "V";
-        num -= 5;
-    } else if (num >= 4) {
-        roman += "IV";
-        num -= 4;
-    }
-    while (num >= 1) {
-        roman += "I";
-        num -= 1;
-    }
-    return roman;
-}
 int main() {
-    assert(arabic_to_roman(-12) == "");
+    assert(roman_to_arabic("CXXX") == 130);
+    assert(roman_to_arabic("") == 0);
+    assert(roman_to_arabic("MMMCMXCIX") == 3999);
+    assert(roman_to_arabic("VII") == 7);
+    assert(roman_to_arabic("L") == 50);
+
+    assert(arabic_to_roman(130) == "CXXX");
     assert(arabic_to_roman(0) == "");
     assert(arabic_to_roman(3999) == "MMMCMXCIX");
     assert(arabic_to_roman(7) == "VII");

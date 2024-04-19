@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.26"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Out_in_the_Middle_of_Space",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Out_in_the_Middle_of_Space::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Out_in_the_Middle_of_Space-Debug-44d9a085838e07feab03.json",
+					"name" : "Out_in_the_Middle_of_Space",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/blake/Documents/CIS121/Week 6/Out in the Middle of Space/cmake-build-debug",
+		"source" : "C:/Users/blake/Documents/CIS121/Week 6/Out in the Middle of Space"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 5
+	}
+}

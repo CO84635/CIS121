@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/blake/OneDrive/Documents/GitHub/CIS121/Week 6/TImes Are Changing
+# Install script for directory: C:/Users/blake/OneDrive/Documents/GitHub/CIS121/Week 10/Portfolio/TImes Are Changing
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/blake/OneDrive/Documents/GitHub/CIS121/Week 6/TImes Are Changing/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/blake/OneDrive/Documents/GitHub/CIS121/Week 10/Portfolio/TImes Are Changing/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

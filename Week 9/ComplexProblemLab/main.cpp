@@ -8,7 +8,7 @@ class ComplexNumber {
 private:
     float real;
     float imaginary;
-    
+
 public:
     ComplexNumber(float real, float imaginary) {
         this-> imaginary = imaginary;
@@ -23,7 +23,7 @@ public:
         return ComplexNumber(real - number_two.real, imaginary - number_two.imaginary);
     }
 
-    ComplexNumber mutliplication(const ComplexNumber number_two) const{
+    ComplexNumber multiplication(const ComplexNumber number_two) const{
         return ComplexNumber(real * number_two.real - imaginary * number_two.imaginary,
                              real * number_two.imaginary + number_two.real * imaginary);
     }

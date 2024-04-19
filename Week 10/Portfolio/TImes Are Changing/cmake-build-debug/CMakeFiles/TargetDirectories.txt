@@ -1,0 +1,3 @@
+C:/Users/blake/OneDrive/Documents/GitHub/CIS121/Week 10/Portfolio/TImes Are Changing/cmake-build-debug/CMakeFiles/TImes_Are_Changing.dir
+C:/Users/blake/OneDrive/Documents/GitHub/CIS121/Week 10/Portfolio/TImes Are Changing/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/blake/OneDrive/Documents/GitHub/CIS121/Week 10/Portfolio/TImes Are Changing/cmake-build-debug/CMakeFiles/rebuild_cache.dir

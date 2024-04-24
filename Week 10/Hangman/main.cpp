@@ -1,35 +1,38 @@
 #include <iostream>
-#include <array>
 #include <string>
 
-// Owen & Audrey
+ std::string current_status(std::string word) {
+    std::string status_word = "";
+    int i = word.length();
+    while (i > 0) {
+        status_word += "_";
+        i--;
+    }
+    return status_word;
+}
+
+// Owen & Brandon;
 using namespace std;
 int main() {
-    int turns = 7;
-    char guess[turns];
+    int tries = 10;
+    cout << "Welcome to Hangman!" << endl;
 
-    std::cout << "Welcome to Hangman!" << std::endl;
+    string player_one_input;
+    cout << "Player one! Enter a word: ";
+    cin >> player_one_input;
 
-    std::string player_one_input;
-    std::cout << "Player one! Enter a word: ";
-    std::cin >> player_one_input;
-    char word[player_one_input.length()];
+    int length = player_one_input.length();
+    cout << "Player two! Guess a word with " << length << " letters: " << endl;
 
-    std::cout << "Player two! Guess a word with " << player_one_input.length() << " letters: " << endl;
+    char guess[length];
 
-    while (turns > 0) {
-        std::cout << "Player two! What is your guess? ";
-        cin >> guess;
-        std::cout << "You are wrong!" << endl;
-        turns--;
+    while(tries > 0) {
+        cout << "What is your guess?: " << endl;
+        cin >> guess[tries - 1];
+        tries--;
+        cout << "You have " << tries << " guesses remaining." << endl;
+        cout << "Your current status: " << current_status(player_one_input) << endl;
     }
-    for(int i = 0; i < player_one_input.length(); i++) {
-        word[player_one_input.at(i)];
-        std::cout << word[i];
-    }
-
-
-
 
     return 0;
 }

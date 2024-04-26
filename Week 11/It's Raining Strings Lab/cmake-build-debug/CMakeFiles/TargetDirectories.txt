@@ -1,0 +1,3 @@
+C:/Users/blake/Documents/CIS121/Week 11/It's Raining Strings Lab/cmake-build-debug/CMakeFiles/It_s_Raining_Strings_Lab.dir
+C:/Users/blake/Documents/CIS121/Week 11/It's Raining Strings Lab/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/blake/Documents/CIS121/Week 11/It's Raining Strings Lab/cmake-build-debug/CMakeFiles/rebuild_cache.dir

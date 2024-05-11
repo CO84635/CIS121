@@ -82,13 +82,15 @@ int main() {
             -- remaining_moves;
             if(checkWin(number, player_one_mark)) {
                 std::cout << "Player 1 wins!" << std::endl;
+                gameBoard(number);
+                break;
+            }
+
+            if (remaining_moves == 0) {
                 break;
             }
         } else {
-            std::cout << "This spot is invalid or already taken!" << std::endl;
-            std::cout << "\nWhat is your move? " << std::endl;
-            std::cin.clear();
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cout << "This spot is invalid or already taken! Please Try again!" << std::endl;
             continue;
         }
 
@@ -101,12 +103,17 @@ int main() {
         --remaining_moves;
         if (checkWin(number, player_two_mark)) {
             std::cout << "AI wins!" << std::endl;
+            gameBoard(number);
+            break;
+        }
+        if (remaining_moves == 0) {
             break;
         }
     }
 
-    if (remaining_moves == 0 && !checkWin(number, player_one_mark) && !checkWin(number, player_two_mark)){
+    if (remaining_moves == 0 && !checkWin(number, player_one_mark) && !checkWin(number, player_two_mark)) {
         std::cout << "It's a draw!" << std::endl;
+        gameBoard(number);
         return 0;
     }
 
